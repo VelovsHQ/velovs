@@ -1,99 +1,149 @@
 import React from "react";
+import { Navbar, NavBody, NavItems, NavbarLogo } from "../components/ui/resizable-navbar";
 
 export default function Page() {
 	return (
-		<main style={{ minHeight: "100vh", background: "#f9f9f9", color: "#111" }}>
-			{/* Hero */}
-			<section style={{ padding: "96px 32px", background: "#111", color: "#fff" }}>
-				<h1 style={{ fontSize: 56, maxWidth: 900 }}>
-					Velovs & Co
-				</h1>
-				<p style={{ marginTop: 24, fontSize: 20, maxWidth: 700 }}>
-					Agentic AI, RAG systems, and business optimization for serious companies.
-				</p>
-			</section>
+		<>
+			{/* Navbar */}
+			<Navbar>
+				<NavBody>
+					<NavbarLogo />
+					<NavItems
+						items={[
+							{ name: "Home", link: "#" },
+							{ name: "What we do", link: "#what-we-do" },
+							{ name: "Services", link: "#services" },
+							{ name: "Process", link: "#how-we-work" },
+							{ name: "Contact", link: "#contact" },
+						]}
+					/>
+				</NavBody>
+			</Navbar>
 
-			{/* About */}
-			<section style={{ padding: "80px 32px", maxWidth: 1100, margin: "0 auto" }}>
-				<h2 style={{ fontSize: 36 }}>What we do</h2>
-				<p style={{ marginTop: 16, fontSize: 18, lineHeight: 1.6 }}>
-					We design and deploy AI systems that think, retrieve, and act.
-					From internal copilots to autonomous workflows, we help teams move faster with fewer people.
-				</p>
-			</section>
-
-			{/* Services */}
-			<section style={{ padding: "80px 32px", background: "#fff" }}>
-				<h2 style={{ fontSize: 36, textAlign: "center" }}>Services</h2>
-				<div
-					style={{
-						display: "grid",
-						gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-						gap: 24,
-						maxWidth: 1100,
-						margin: "48px auto 0"
-					}}
-				>
-					{[
-						"Agentic AI Systems",
-						"RAG & Knowledge Engines",
-						"Business Process Automation",
-						"Internal AI Tools",
-						"AI Strategy & Architecture",
-						"Optimization & Cost Reduction"
-					].map((item) => (
-						<div
-							key={item}
-							style={{
-								padding: 32,
-								borderRadius: 12,
-								background: "#f3f3f3"
-							}}
+			{/* Hero Section */}
+			<section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-zinc-900 to-black text-white px-6">
+				<div className="max-w-4xl text-center space-y-6">
+					<h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+						Building AI Systems <br /> That Actually Work
+					</h1>
+					<p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+						Velovs & Co designs agentic AI, RAG systems, and business-optimized
+						automation that saves time, cuts costs, and scales intelligently.
+					</p>
+					<div className="flex justify-center gap-4">
+						<a
+							href="#contact"
+							className="px-6 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
 						>
-							<h3 style={{ fontSize: 22 }}>{item}</h3>
-							<p style={{ marginTop: 12, color: "#444" }}>
-								Designed for scale, security, and real-world usage.
-							</p>
-						</div>
-					))}
+							Book a Call
+						</a>
+						<a
+							href="#what-we-do"
+							className="px-6 py-3 rounded-xl border border-zinc-700 text-white hover:bg-zinc-900 transition"
+						>
+							Learn More
+						</a>
+					</div>
 				</div>
 			</section>
 
-			{/* Process */}
-			<section style={{ padding: "80px 32px", maxWidth: 1100, margin: "0 auto" }}>
-				<h2 style={{ fontSize: 36 }}>How we work</h2>
-				<ol style={{ marginTop: 24, fontSize: 18, lineHeight: 1.8 }}>
-					<li>Understand your business bottlenecks</li>
-					<li>Design AI-first workflows</li>
-					<li>Build, test, and iterate fast</li>
-					<li>Deploy with monitoring and guardrails</li>
-				</ol>
+			{/* What We Do */}
+			<section
+				id="what-we-do"
+				className="py-24 bg-black text-white px-6"
+			>
+				<div className="max-w-6xl mx-auto">
+					<h2 className="text-4xl font-bold mb-12 text-center">
+						What We Do
+					</h2>
+					<div className="grid md:grid-cols-3 gap-8">
+						<div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+							<h3 className="text-xl font-semibold mb-2">
+								Agentic AI
+							</h3>
+							<p className="text-zinc-400">
+								Autonomous AI agents that reason, plan, and execute tasks across
+								your business workflows.
+							</p>
+						</div>
+						<div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+							<h3 className="text-xl font-semibold mb-2">
+								RAG Systems
+							</h3>
+							<p className="text-zinc-400">
+								Private, secure AI systems that retrieve knowledge from your
+								internal data with accuracy.
+							</p>
+						</div>
+						<div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+							<h3 className="text-xl font-semibold mb-2">
+								Business Optimization
+							</h3>
+							<p className="text-zinc-400">
+								We redesign processes using AI to reduce friction, cost, and
+								human error.
+							</p>
+						</div>
+					</div>
+				</div>
 			</section>
 
-			{/* CTA */}
-			<section style={{ padding: "96px 32px", background: "#111", color: "#fff", textAlign: "center" }}>
-				<h2 style={{ fontSize: 40 }}>Build smarter systems</h2>
-				<p style={{ marginTop: 16, fontSize: 18 }}>
-					If your company is wasting time on manual work, we should talk.
-				</p>
-				<button
-					style={{
-						marginTop: 32,
-						padding: "14px 28px",
-						fontSize: 16,
-						borderRadius: 8,
-						border: "none",
-						cursor: "pointer"
-					}}
-				>
-					Get in touch
-				</button>
+			{/* How We Work */}
+			<section
+				id="how-we-work"
+				className="py-24 bg-zinc-950 text-white px-6"
+			>
+				<div className="max-w-6xl mx-auto">
+					<h2 className="text-4xl font-bold mb-12 text-center">
+						How We Work
+					</h2>
+					<div className="grid md:grid-cols-4 gap-6 text-center">
+						<div className="p-5 rounded-xl bg-black border border-zinc-800">
+							<p className="font-semibold mb-1">01</p>
+							<p className="text-zinc-400">Understand the problem</p>
+						</div>
+						<div className="p-5 rounded-xl bg-black border border-zinc-800">
+							<p className="font-semibold mb-1">02</p>
+							<p className="text-zinc-400">Design the AI system</p>
+						</div>
+						<div className="p-5 rounded-xl bg-black border border-zinc-800">
+							<p className="font-semibold mb-1">03</p>
+							<p className="text-zinc-400">Build and integrate</p>
+						</div>
+						<div className="p-5 rounded-xl bg-black border border-zinc-800">
+							<p className="font-semibold mb-1">04</p>
+							<p className="text-zinc-400">Optimize and scale</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Contact */}
+			<section
+				id="contact"
+				className="py-24 bg-black text-white px-6"
+			>
+				<div className="max-w-3xl mx-auto text-center space-y-6">
+					<h2 className="text-4xl font-bold">
+						Let’s Build Something Powerful
+					</h2>
+					<p className="text-zinc-400">
+						Tell us about your business. We’ll show you how AI can actually
+						move the needle.
+					</p>
+					<a
+						href="mailto:contact@velovs.com"
+						className="inline-block px-8 py-4 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+					>
+						Contact Us
+					</a>
+				</div>
 			</section>
 
 			{/* Footer */}
-			<footer style={{ padding: 32, textAlign: "center", background: "#000", color: "#777" }}>
+			<footer className="py-8 bg-zinc-950 text-zinc-500 text-center text-sm">
 				© {new Date().getFullYear()} Velovs & Co. All rights reserved.
 			</footer>
-		</main>
+		</>
 	);
 }
