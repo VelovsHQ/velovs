@@ -12,6 +12,9 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+import SmoothScroller from '../components/smoothscroller'
+
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -23,6 +26,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<Navbar />
+				<SmoothScroller />
 				{children}
 			</body>
 		</html>

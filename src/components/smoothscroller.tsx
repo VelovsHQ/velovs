@@ -14,7 +14,6 @@ const SmoothScroller = () => {
 
     requestAnimationFrame(raf)
 
-    // Cleanup function to destroy lenis instance on unmount
     return () => {
       lenis.destroy()
     }
