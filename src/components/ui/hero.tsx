@@ -212,7 +212,7 @@ const Hero = () => {
 
           {/* Text Content */}
           <span className="text-xs sm:text-sm font-mono">
-            Community support, daily live office hours, and thousands of builders - all on Discord.
+            AI Solutions That Take Your Business to the Next Level.
           </span>
           
         </a>
@@ -229,15 +229,15 @@ const Hero = () => {
             fontFamily: 'Satoshi, Plus Jakarta Sans, sans-serif'
           }}
         >
-          The Complete <br />
+          Automations for <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white" style={{ fontFamily: 'Satoshi, Plus Jakarta Sans, sans-serif' }}>
-            AI Agent Platform
+            Modern Businesses
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Velovs & Co is an all-in-one platform for building AI agents powered by the latest LLMs.
+          We design, develop, and implement automation tools that help you work smarter, not harder
         </p>
 
         {/* CTA Buttons */}
