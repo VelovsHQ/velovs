@@ -241,15 +241,14 @@ const Hero = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-4 bg-[#116bff] hover:bg-[#0d5adb] text-white text-lg font-medium rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(17,107,255,0.4)] flex items-center justify-center gap-2 group">
+        <div className="flex flex-col sm:flex-row items-center gap-6 mt-4 w-full sm:w-auto">
+          <button className="w-full sm:w-auto px-8 py-4 bg-[#8cd4ff] hover:bg-white text-black text-lg font-medium rounded-full transition-all ring-1 ring-[#8cd4ff] ring-offset-4 ring-offset-black flex items-center justify-center gap-2 group">
             Get started for free
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-5 h-5 text-black group-hover:translate-x-1 transition-transform" />
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 hover:bg-white/5 text-white text-lg font-medium rounded-full transition-all flex items-center justify-center gap-2">
+          <button className="w-full sm:w-auto px-8 py-4 bg-[#1a1a1a] border border-white/20 hover:bg-white/10 text-white text-lg font-medium rounded-full transition-all flex items-center justify-center gap-2">
             Watch a demo
-            <PlayCircle className="w-5 h-5 opacity-70" />
           </button>
         </div>
 
