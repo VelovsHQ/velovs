@@ -1,7 +1,27 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import { Container } from './ui/container';
 
 const Features = () => {
+  const [showSocials, setShowSocials] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show icons when scrolled past 50% of the viewport height (leaving hero)
+      if (window.scrollY > window.innerHeight * 0.5) {
+        setShowSocials(true);
+      } else {
+        setShowSocials(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Trigger once on mount to check initial position
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="bg-black text-white min-h-screen w-full py-6 font-sans selection:bg-white selection:text-black overflow-hidden relative">
       <Container>
@@ -91,18 +111,45 @@ const Features = () => {
       
 
       {/* Floating Social Icons (Right edge) */}
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
-        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+      <div className={`fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4 items-end transition-all duration-500 ease-in-out ${showSocials ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0 pointer-events-none'}`}>
+        {/* X (Twitter) */}
+        <button className="group flex items-center bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300">
+            <span className="max-w-0 overflow-hidden group-hover:max-w-[10rem] transition-all duration-500 ease-in-out text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 text-white">
+                <span className="pl-4">@velovs</span>
+            </span>
+            <div className="p-3 shrink-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+            </div>
         </button>
-        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.6.6 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+
+        {/* LinkedIn */}
+        <button className="group flex items-center bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300">
+            <span className="max-w-0 overflow-hidden group-hover:max-w-[10rem] transition-all duration-500 ease-in-out text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 text-white">
+                <span className="pl-4">Velovs</span>
+            </span>
+            <div className="p-3 shrink-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.6.6 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+            </div>
         </button>
-        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+
+        {/* Email */}
+        <button className="group flex items-center bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300">
+            <span className="max-w-0 overflow-hidden group-hover:max-w-[10rem] transition-all duration-500 ease-in-out text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 text-white">
+                <span className="pl-4">Contact</span>
+            </span>
+            <div className="p-3 shrink-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+            </div>
         </button>
-        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+
+        {/* News/Updates */}
+        <button className="group flex items-center bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300">
+            <span className="max-w-0 overflow-hidden group-hover:max-w-[10rem] transition-all duration-500 ease-in-out text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 text-white">
+                <span className="pl-4">Updates</span>
+            </span>
+            <div className="p-3 shrink-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+            </div>
         </button>
       </div>
 
