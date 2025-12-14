@@ -5,70 +5,42 @@ const Features = () => {
   return (
     <section className="bg-black text-white min-h-screen w-full py-6 font-sans selection:bg-white selection:text-black overflow-hidden relative">
       <Container>
-      {/* --- Top Navigation / Header Area --- */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-12">
-        
-        {/* Logo */}
-        <div className="col-span-1 md:col-span-2">
-          <h1 className="text-xl font-bold tracking-tight">Velovs®</h1>
-        </div>
-
-        {/* Quick Links */}
-        <div className="col-span-1">
-          <p className="text-xs text-gray-400 mb-1">Quick Links</p>
-          <p className="text-sm font-medium">Home, Gallery, Work, Contact</p>
-        </div>
-
-        {/* Location Info */}
-        <div className="col-span-1 hidden md:block">
-          <p className="text-xs text-gray-400 mb-1">Based in Colombo <span className="text-[10px]">ˡᵏ</span></p>
-          <p className="text-sm font-medium">Intelligence + Businesses</p>
-        </div>
-      </div>
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-12"></div> */}
 
       {/* --- Main Content Split --- */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
+      <div className="relative z-10 mb-24">
         
-        {/* Left Column: Headline & White Strip */}
-        <div className="lg:col-span-7 flex flex-col justify-between h-full min-h-[400px]">
-          
-          {/* Hero Headline */}
-          <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] tracking-tight">
+        {/* Headline */}
+        <div className="mb-12 max-w-2xl lg:max-w-4xl relative z-10 md:ml-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] tracking-tight">
               Pattern Dimensions <br />
               and Moments that <br />
               Connect and Leave a <br />
               Bold イメージ.
             </h2>
-          </div>
+        </div>
 
-          {/* White Info Strip */}
-          {/* This strip stretches full width of the left column */}
-          <div className="w-full bg-white text-black py-2 px-4 md:px-6 flex justify-between items-center text-sm md:text-base font-bold tracking-wide mt-auto">
+        {/* White Info Strip */}
+        <div className="bg-white text-black py-1 px-4 md:px-6 flex justify-between items-center text-xs md:text-sm font-bold tracking-wide relative z-10 md:mr-[28rem] lg:mr-[32rem]">
             <span>Art Direction</span>
             <span>Branding</span>
             <span>Strategy</span>
-          </div>
         </div>
-
-        {/* Right Column: The Video Square */}
-        <div className="lg:col-span-5 flex items-start justify-end">
-          <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gray-900">
-            {/* NOTE: Replace the src below with your actual video file. 
-              Using a placeholder abstract video for demonstration.
-            */}
+        
+        {/* Video - Absolute Positioned Top Right on Desktop */}
+        <div className="relative mt-8 md:mt-0 md:absolute md:right-6 md:top-0 z-20 w-full md:w-80 lg:w-96 aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
             <video 
               autoPlay 
               muted 
               loop 
               playsInline
-              className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700 ease-in-out"
+              className="w-full h-full object-cover opacity-90"
             >
-              <source src="https://videos.pexels.com/video-files/5527814/5527814-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              <source src="/videos/temp_video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
         </div>
+
       </div>
 
       {/* --- Bottom Typography Section --- */}
@@ -82,17 +54,26 @@ const Features = () => {
             Akihiko
           </span>
           {/* Superscript TM */}
-          <span className="text-2xl md:text-6xl font-bold align-top mt-4 md:mt-10 ml-2 md:ml-4">
+          <span className="text-4xl md:text-8xl font-bold align-top relative -top-12 md:-top-32 ml-2 md:ml-4">
             TM
           </span>
         </div>
       </div>
       </Container>
 
-      {/* Floating Twitter/X Icon (Right edge) */}
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:block">
-        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+      {/* Floating Social Icons (Right edge) */}
+      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
+        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+        </button>
+        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.6.6 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+        </button>
+        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+        </button>
+        <button className="bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm transition-colors group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white group-hover:scale-110 transition-transform"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
         </button>
       </div>
 
