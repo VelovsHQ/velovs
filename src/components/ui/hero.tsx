@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, PlayCircle } from 'lucide-react';
 
 
+
 const GridBackground = () => (
   <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
     {/* Base Grid */}
@@ -103,24 +104,24 @@ const Hero = () => {
 
       {/* Floating Elements Container - Hidden on mobile, visible on lg */}
       <div className="absolute inset-0 pointer-events-none max-w-7xl mx-auto hidden lg:block">
-        
-        {/* Left Side Elements */}
-        <div className="absolute top-1/3 left-10 animate-float-slow transform -rotate-12">
-           <WireframeCan className="w-32 h-40 opacity-90 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]" />
-        </div>
-        <div className="absolute bottom-1/4 left-32 animate-float-delayed">
-           <WireframeApple className="w-24 h-24 opacity-90 drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]" />
-        </div>
-        <div className="absolute top-1/2 left-[15%] animate-float-reverse">
-           <HexNut className="w-20 h-20 opacity-80 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
+        {/* Left Side Custom SVG */}
+        <div className="absolute top-1/4 -left-50 animate-float-slow transform ">
+          <img
+            src="/images/hero/left.svg"
+            alt="Left Hero Graphic"
+            className="w-130 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(46,75,147,0.3)]"
+            draggable="false"
+          />
         </div>
 
-        {/* Right Side Elements */}
-        <div className="absolute top-1/3 right-10 animate-float-slow transform rotate-12">
-            <WireframeScissors className="w-40 h-40 opacity-90 drop-shadow-[0_0_15px_rgba(99,102,241,0.3)]" />
-        </div>
-        <div className="absolute bottom-1/3 right-32 animate-float-delayed">
-            <WireframeCup className="w-28 h-24 opacity-80 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]" />
+        {/* Right Side Custom SVG */}
+        <div className="absolute top-1/4 -right-50 animate-float-slow transform">
+          <img
+            src="/images/hero/right.svg"
+            alt="Right Hero Graphic"
+            className="w-130 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(11,65,153,0.3)]"
+            draggable="false"
+          />
         </div>
       </div>
 
