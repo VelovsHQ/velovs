@@ -172,21 +172,21 @@ const Hero = () => {
       {/* Floating Elements Container - Hidden on mobile, visible on lg */}
       <div className="absolute inset-0 pointer-events-none max-w-7xl mx-auto hidden lg:block">
         {/* Left Side Custom SVG */}
-        <div className="absolute top-1/4 -left-50 animate-float-slow transform ">
+        <div className="absolute top-2/7 -left-20 animate-float-slow transform ">
           <img
             src="/images/hero/left.svg"
             alt="Left Hero Graphic"
-            className="w-130 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(46,75,147,0.3)]"
+            className="w-110 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(46,75,147,0.3)] rotate-12"
             draggable="false"
           />
         </div>
 
         {/* Right Side Custom SVG */}
-        <div className="absolute top-1/4 -right-50 animate-float-slow transform">
+        <div className="absolute top-2/7 -right-20 animate-float-slow transform">
           <img
             src="/images/hero/right.svg"
             alt="Right Hero Graphic"
-            className="w-130 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(11,65,153,0.3)]"
+            className="w-110 h-auto opacity-100 drop-shadow-[0_0_15px_rgba(11,65,153,0.3)] rotate-12"
             draggable="false"
           />
         </div>
@@ -223,14 +223,14 @@ const Hero = () => {
 
         {/* Headline */}
         <h1 
-          className="font-medium tracking-tight leading-[1.1]"
+          className="font-medium tracking-wide leading-[1.1]"
           style={{
             fontSize: 'clamp(3rem, 7vw, 6rem)',
-            fontFamily: 'Aspekta, sans-serif'
+            fontFamily: 'Satoshi, Plus Jakarta Sans, sans-serif'
           }}
         >
           The Complete <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-400">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white" style={{ fontFamily: 'Satoshi, Plus Jakarta Sans, sans-serif' }}>
             AI Agent Platform
           </span>
         </h1>
@@ -242,12 +242,12 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-6 mt-4 w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-4 bg-[#8cd4ff] hover:bg-white text-black text-lg font-medium rounded-full transition-all ring-1 ring-[#8cd4ff] ring-offset-4 ring-offset-black flex items-center justify-center gap-2 group">
+          <button className="w-full sm:w-auto px-8 py-4 bg-[#8cd4ff] hover:bg-white text-black text-lg font-medium rounded-full transition-all ring-1 ring-[#8cd4ff] hover:ring-white ring-offset-4 ring-offset-black flex items-center justify-center gap-2 group" style={{ fontFamily: 'Chakra Petch, sans-serif' }}>
             Get started for free
             <ChevronRight className="w-5 h-5 text-black group-hover:translate-x-1 transition-transform" />
           </button>
-          
-          <button className="w-full sm:w-auto px-8 py-4 bg-[#1a1a1a] border border-white/20 hover:bg-white/10 text-white text-lg font-medium rounded-full transition-all flex items-center justify-center gap-2">
+
+          <button className="w-full sm:w-auto px-8 py-4 bg-[#1a1a1a] border border-white/20 hover:border-white hover:text-white hover:bg-white/10 text-white text-lg font-medium rounded-full transition-all flex items-center justify-center gap-2" style={{ fontFamily: 'Chakra Petch, sans-serif' }}>
             Watch a demo
           </button>
         </div>
