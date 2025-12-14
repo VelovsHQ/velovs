@@ -5,7 +5,7 @@ const Features = () => {
   return (
     <section className="bg-black text-white min-h-screen w-full py-6 font-sans selection:bg-white selection:text-black overflow-hidden relative">
       <Container>
-      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-12"></div> */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-12"></div>
 
       {/* --- Main Content Split --- */}
       <div className="relative z-10 mb-24">
@@ -48,17 +48,39 @@ const Features = () => {
         {/* Subtle separator line */}
         <div className="w-full h-px bg-gray-900 mb-4"></div>
         
-        <div className="flex items-baseline justify-between leading-none">
-          <div className="flex items-baseline leading-none">
-            {/* The giant text */}
-            <span className="text-[19vw] md:text-[23.5vw] font-bold tracking-tighter text-white block -mb-4 md:-mb-10">
+        {/* SVG Graphic Implementation */}
+        <div className="w-full leading-none">
+          {/* Changed viewBox width from 550 to 485 to remove right-side gap */}
+          <svg
+            viewBox="0 0 485 140" 
+            className="w-full h-auto fill-white block"
+            preserveAspectRatio="xMidYMid meet"
+            aria-label="Velovs TM"
+          >
+            <text
+              x="0"
+              y="125"
+              className="font-bold tracking-tighter"
+              style={{ 
+                fontSize: '144px', 
+                fontFamily: 'inherit',
+                letterSpacing: '-0.06em' // Tightened letter spacing slightly
+              }}
+            >
               Velovs
-            </span>
-            {/* Superscript TM */}
-            <span className="text-[6vw] md:text-[8vw] font-bold align-top relative -top-[3vw] md:-top-[11vw] -ml-[1vw]">
+            </text>
+            <text
+              x="420" 
+              y="55"
+              className="font-bold"
+              style={{ 
+                fontSize: '40px', 
+                fontFamily: 'inherit' 
+              }}
+            >
               TM
-            </span>
-          </div>
+            </text>
+          </svg>
         </div>
       </div>
       </Container>
