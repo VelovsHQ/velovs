@@ -1,7 +1,9 @@
 
 import React from "react";
 import { Navbar, NavBody, NavItems, NavbarLogo } from "../components/ui/resizable-navbar";
+
 import Hero from "../components/ui/hero";
+import Features from "../components/Features";
 
 export default function Page() {
   return (
@@ -21,6 +23,7 @@ export default function Page() {
         </NavBody>
       </Navbar>
       <Hero />
+      <Features />
     </>
   );
 }
