@@ -5,7 +5,7 @@ const Features = () => {
   return (
     <section className="bg-black text-white min-h-screen w-full py-6 font-sans selection:bg-white selection:text-black overflow-hidden relative">
       <Container>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-12"></div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-900 pb-6 mb-12"></div>
 
       {/* --- Main Content Split --- */}
       <div className="relative z-10 mb-24">
@@ -40,29 +40,31 @@ const Features = () => {
               Your browser does not support the video tag.
             </video>
         </div>
+        
 
       </div>
 
       {/* --- Bottom Typography Section --- */}
       <div className="relative mt-12 md:mt-24 w-full">
         {/* Subtle separator line */}
-        <div className="w-full h-px bg-gray-900 mb-4"></div>
+        {/* <div className="w-full h-px bg-gray-900 mb-4"></div> */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-800 pb-6 mb-2"></div>
         
         {/* SVG Graphic Implementation */}
         <div className="w-full leading-none">
-          {/* Changed viewBox width from 550 to 485 to remove right-side gap */}
           <svg
-            viewBox="0 0 485 140" 
+            viewBox="0 20 485 114" 
             className="w-full h-auto fill-white block"
             preserveAspectRatio="xMidYMid meet"
             aria-label="Velovs TM"
           >
+            
             <text
               x="0"
               y="125"
               className="font-bold tracking-tighter"
               style={{ 
-                fontSize: '144px', 
+                fontSize: '139px', 
                 fontFamily: 'inherit',
                 letterSpacing: '-0.06em' // Tightened letter spacing slightly
               }}
@@ -70,11 +72,11 @@ const Features = () => {
               Velovs
             </text>
             <text
-              x="420" 
-              y="55"
+              x="407" 
+              y="58"
               className="font-bold"
               style={{ 
-                fontSize: '40px', 
+                fontSize: '48px', 
                 fontFamily: 'inherit' 
               }}
             >
@@ -82,8 +84,11 @@ const Features = () => {
             </text>
           </svg>
         </div>
+        <div className="h-px bg-gray-800 w-full"></div>
       </div>
+      
       </Container>
+      
 
       {/* Floating Social Icons (Right edge) */}
       <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
