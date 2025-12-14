@@ -1,24 +1,91 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronRight, PlayCircle } from 'lucide-react';
 
+// COMPONENT: Interactive Grid Background ---
+const SpotlightGrid = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setOpacity(1);
+  };
 
-const GridBackground = () => (
-  <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    {/* Base Grid */}
+  const handleMouseLeave = () => {
+    setOpacity(0);
+  };
+
+  return (
     <div 
-      className="absolute inset-0 opacity-[0.08]"
-      style={{
-        backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-        backgroundSize: '40px 40px'
-      }}
-    />
-    {/* Radial Fade */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c0f] via-transparent to-[#0b0c0f]" />
-    <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-transparent to-[#0b0c0f]" />
-  </div>
-);
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="absolute inset-0 z-0 overflow-hidden"
+    >
+      {/* 1. The Static, Faint Grid (Always visible) */}
+      <div 
+        className="absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      {/* 2. The "Glowing" Grid (Revealed by mouse) */}
+      <div 
+        className="absolute inset-0 transition-opacity duration-300 ease-in-out"
+        style={{
+          opacity: opacity,
+          // This creates the "Colorful" effect. We use a gradient background.
+          background: 'radial-gradient(circle at center, rgba(17, 107, 255, 0.15), rgba(139, 92, 246, 0.15))',
+          // The mask restricts this glowing background to ONLY the grid lines near the mouse
+          maskImage: `radial-gradient(350px circle at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
+          WebkitMaskImage: `radial-gradient(350px circle at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
+        }}
+      >
+        {/* overlay the grid lines on top of the glow so only the lines/boxes catch the light */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+            opacity: 0.5
+          }}
+        />
+      </div>
+
+      {/* Fade Edges to Black (Vignette) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c0f] via-transparent to-[#0b0c0f] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-transparent to-[#0b0c0f] pointer-events-none" />
+    </div>
+  );
+};
+
+// COMPONENT: Static Grid Background (Not used currently) ---
+
+// const GridBackground = () => (
+//   <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+//     {/* Base Grid */}
+//     <div 
+//       className="absolute inset-0 opacity-[0.08]"
+//       style={{
+//         backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+//         backgroundSize: '40px 40px'
+//       }}
+//     />
+//     {/* Radial Fade */}
+//     <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c0f] via-transparent to-[#0b0c0f]" />
+//     <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-transparent to-[#0b0c0f]" />
+//   </div>
+// );
 
 const WireframeCan = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 100 140" className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -100,7 +167,7 @@ const WireframeCup = ({ className }: { className?: string }) => (
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#0b0c0f] text-white overflow-hidden pt-20">
-      <GridBackground />
+      <SpotlightGrid />
 
       {/* Floating Elements Container - Hidden on mobile, visible on lg */}
       <div className="absolute inset-0 pointer-events-none max-w-7xl mx-auto hidden lg:block">
@@ -125,19 +192,43 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-8">
-        
-        {/* Top Tag */}
-        <a href="#" className="group inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-          <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white transition-colors">
+      {/* Top Tag Box */}
+      <div className="absolute top-37 left-0 right-0 z-20 flex justify-center px-4">
+        <a 
+          href="#" 
+          className="
+            group relative inline-flex items-center justify-center px-6 py-2 
+            border border-[#3c8135] 
+            bg-black/20 
+            hover:bg-[#3c8135]/20 
+            text-[#bbbebb]
+            transition-colors duration-300 cursor-pointer
+          "
+        >
+          
+          {/* The Blinking Pointer */}
+          {/* Uses the new fast, non-fading animation */}
+          <span className="absolute -top-1 -left-1 w-2 h-2 bg-[#3c8135] animate-cursor"></span>
+
+          {/* Text Content */}
+          <span className="text-xs sm:text-sm font-mono">
             Community support, daily live office hours, and thousands of builders - all on Discord.
           </span>
+          
         </a>
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-8">
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-[1.1]">
+        <h1 
+          className="font-medium tracking-tight leading-[1.1]"
+          style={{
+            fontSize: 'clamp(3rem, 7vw, 6rem)',
+            fontFamily: 'Aspekta, sans-serif'
+          }}
+        >
           The Complete <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-400">
             AI Agent Platform
@@ -146,7 +237,7 @@ const Hero = () => {
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Botpress is an all-in-one platform for building AI agents powered by the latest LLMs.
+          Velovs & Co is an all-in-one platform for building AI agents powered by the latest LLMs.
         </p>
 
         {/* CTA Buttons */}
