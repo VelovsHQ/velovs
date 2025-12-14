@@ -13,18 +13,18 @@ const Features = () => {
         {/* Headline */}
         <div className="mb-12 max-w-2xl lg:max-w-4xl relative z-10 md:ml-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] tracking-tight">
-              Pattern Dimensions <br />
-              and Moments that <br />
-              Connect and Leave a <br />
-              Bold イメージ.
+              Why Settle for Average <br />
+              When Intelligence Can <br />
+              Transform Your Business <br />
+              Into Excellence?
             </h2>
         </div>
 
         {/* White Info Strip */}
-        <div className="bg-white text-black py-1 px-4 md:px-6 flex justify-between items-center text-xs md:text-sm font-bold tracking-wide relative z-10 md:mr-[28rem] lg:mr-[32rem]">
-            <span>Art Direction</span>
-            <span>Branding</span>
-            <span>Strategy</span>
+        <div className="bg-white text-black py-0.5 px-4 md:px-30 flex justify-between items-center text-xs md:text-sm font-bold tracking-wide relative z-10 mr-8 md:pr-[26rem] lg:pr-[30rem] font-chakra-petch">
+            <span>Design with AI</span>
+            <span>Build with Data</span>
+            <span>Scale with Intelligence</span>
         </div>
         
         {/* Video - Absolute Positioned Top Right on Desktop */}
