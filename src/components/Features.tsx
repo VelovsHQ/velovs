@@ -48,15 +48,17 @@ const Features = () => {
         {/* Subtle separator line */}
         <div className="w-full h-px bg-gray-900 mb-4"></div>
         
-        <div className="flex items-baseline leading-none">
-          {/* The giant text */}
-          <span className="text-[18vw] md:text-[22vw] font-bold tracking-tighter text-white block -mb-4 md:-mb-10">
-            Akihiko
-          </span>
-          {/* Superscript TM */}
-          <span className="text-4xl md:text-8xl font-bold align-top relative -top-12 md:-top-32 ml-2 md:ml-4">
-            TM
-          </span>
+        <div className="flex items-baseline justify-between leading-none">
+          <div className="flex items-baseline leading-none">
+            {/* The giant text */}
+            <span className="text-[19vw] md:text-[23.5vw] font-bold tracking-tighter text-white block -mb-4 md:-mb-10">
+              Velovs
+            </span>
+            {/* Superscript TM */}
+            <span className="text-[6vw] md:text-[8vw] font-bold align-top relative -top-[3vw] md:-top-[11vw] -ml-[1vw]">
+              TM
+            </span>
+          </div>
         </div>
       </div>
       </Container>
