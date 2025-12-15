@@ -32,6 +32,7 @@ export default function Page() {
       <Features />
       <StatsSection />
       <Featured_works />
+      <Services />
       {/* <StickyProjects /> */}
     </>
   );
