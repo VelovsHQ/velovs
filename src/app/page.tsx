@@ -10,6 +10,7 @@ import StatsSection from "../components/StatsSection";
 import StickyProjects from "../components/StickyProjects";
 import Featured_works from "../components/Featured_works";
 import Services from "../components/Services";
+import FAQ from "../components/FAQ";
 
 export default function Page() {
   return (
@@ -32,8 +33,9 @@ export default function Page() {
       <Features />
       <StatsSection />
       <Featured_works />
-      <Services />
       {/* <StickyProjects /> */}
+      <Services />
+      <FAQ />
     </>
   );
 }
