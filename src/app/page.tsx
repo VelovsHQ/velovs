@@ -11,6 +11,7 @@ import StickyProjects from "../components/StickyProjects";
 import Featured_works from "../components/Featured_works";
 import Services from "../components/Services";
 import FAQ from "../components/FAQ";
+import CommunityMarquee from "../components/CommunityMarquee";
 
 export default function Page() {
   return (
@@ -36,6 +37,7 @@ export default function Page() {
       {/* <StickyProjects /> */}
       <Services />
       <FAQ />
+      <CommunityMarquee />
     </>
   );
 }
