@@ -2,14 +2,16 @@ import React from 'react';
 
 const FeaturedWorks: React.FC = () => {
   return (
-    <section className="bg-black text-white w-full overflow-hidden py-12 border-b border-gray-800">
-      
-
-      {/* <div className="w-full px-6 md:px-12 flex justify-between items-center text-[10px] md:text-xs tracking-widest uppercase font-medium text-gray-400 pb-4 border-b border-gray-800">
-      </div> */}
+    // Removed the outer border-b since we are adding specific borders around the text now
+    <section className="bg-black text-white w-full overflow-hidden py-12">
 
       {/* --- Infinite Marquee Section --- */}
-      <div className="relative w-full py-16 md:py-32 flex overflow-hidden">
+      {/* UPDATED HERE: 
+          1. Added 'border-y' for top and bottom lines.
+          2. Added 'border-neutral-800' for a subtle, low-opacity professional look.
+          3. Reduced padding to 'py-4' so lines are close to the text.
+      */}
+      <div className="relative w-full py-4 border-y border-neutral-800 flex overflow-hidden my-8">
         <div className="flex w-max animate-marquee whitespace-nowrap">
           
           {/* First Copy */}
@@ -27,7 +29,8 @@ const FeaturedWorks: React.FC = () => {
 // Sub-component for clean code
 const MarqueeItem = () => (
   <div className="flex items-center px-4 md:px-8">
-    <span className="text-[15vw] leading-none font-bold tracking-tighter">
+    {/* Added 'py-2' here just to give a tiny bit of breathing room between text and the new borders */}
+    <span className="text-[15vw] leading-none font-bold tracking-tighter py-2">
       {/* The Copyright Symbol */}
       <span className="font-medium mr-4 align-middle text-[12vw]">©</span>
       Featured Works
