@@ -88,7 +88,7 @@ const ProjectCard = ({
   return (
     <div 
       ref={ref}
-      className="min-h-screen flex flex-col justify-center p-8 md:p-16 border-l border-neutral-800/50"
+      className="min-h-screen flex flex-col justify-center pt-24 p-8 md:16 border-l border-neutral-800/50"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ function useInView(ref: React.RefObject<Element>, options = {}) {
 
 const ProjectVisual = ({ activeProject }: { activeProject: number }) => {
   return (
-    <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+    <div className="sticky top-0 h-screen w-full flex items-center justify-center pt-24 overflow-hidden">
       
       <div className="relative w-[90%] h-[60%] md:w-[80%] md:h-[70%] rounded-2xl overflow-hidden">
         <AnimatePresence mode='wait'>
@@ -196,29 +196,11 @@ const ProjectVisual = ({ activeProject }: { activeProject: number }) => {
   );
 };
 
-const ScrollProgress = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-50"
-      style={{ scaleX }}
-    />
-  );
-};
-
 export default function ProjectsPage() {
   const [activeProject, setActiveProject] = useState(0);
 
   return (
     <div className="bg-neutral-950 min-h-screen text-neutral-200 selection:bg-blue-500/30">
-      <ScrollProgress />
-      
       {/* Main Sticky Section */}
       <div className="relative flex flex-col md:flex-row w-full max-w-[1600px] mx-auto">
         
