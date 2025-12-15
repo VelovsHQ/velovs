@@ -63,8 +63,8 @@ const SpotlightGrid = () => {
       </div>
 
       {/* Fade Edges to Black (Vignette) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c0f] via-transparent to-[#0b0c0f] pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-transparent to-[#0b0c0f] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-[#0b0c0f] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-transparent to-[#000000] pointer-events-none" />
     </div>
   );
 };

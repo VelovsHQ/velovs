@@ -3,7 +3,9 @@ import React from "react";
 import { Navbar, NavBody, NavItems, NavbarLogo } from "../components/ui/resizable-navbar";
 
 import Hero from "../components/ui/hero";
+
 import Features from "../components/Features";
+import StatsSection from "../components/StatsSection";
 
 export default function Page() {
   return (
@@ -24,6 +26,7 @@ export default function Page() {
       </Navbar>
       <Hero />
       <Features />
+      <StatsSection />
     </>
   );
 }

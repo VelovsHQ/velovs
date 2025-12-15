@@ -41,7 +41,7 @@ const Features = () => {
         </div>
 
         {/* White Info Strip */}
-        <div className="bg-white text-black py-0.5 px-4 md:px-30 flex justify-between items-center text-xs md:text-sm font-bold tracking-wide relative z-10 mr-8 md:pr-[26rem] lg:pr-[30rem] font-chakra-petch">
+        <div className="bg-white text-black py-0.5 px-4 md:px-30 flex justify-between items-center text-xs md:text-sm font-bold tracking-wide relative z-10 mr-8 md:pr-[26rem] lg:pr-[30rem] font-chakra">
             <span>Design with AI</span>
             <span>Build with Data</span>
             <span>Scale with Intelligence</span>
