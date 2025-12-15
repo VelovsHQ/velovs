@@ -127,7 +127,21 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
   }
+
+  /* Define the custom animation */
+  --animate-marquee: marquee 25s linear infinite;
+
+  /* Define the keyframes */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
+
 
 
 @layer base {
@@ -138,6 +152,8 @@
     @apply bg-background text-foreground;
 	}
 }
+
+
 
 @layer utilities {
   .font-aspekta {
