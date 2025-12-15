@@ -14,33 +14,33 @@ type FaqItem = {
 const faqData: FaqItem[] = [
   {
     id: '01',
-    question: 'What services do you offer?',
-    answer: 'We architect AI systems from strategy to deployment: custom machine learning models, intelligent automation, predictive analytics, natural language processing, computer vision, and seamless integration into your existing infrastructure. If it thinks, we build it.',
+    question: 'What do you actually build?',
+    answer: 'Smart systems that solve real problems. Predictive models, automation workflows, intelligent search, recommendation engines, data pipelines—whatever makes your business think faster and move smarter.'
   },
   {
     id: '02',
-    question: 'What is your typical turnaround time?',
-    answer: 'AI strategy and planning: 2-3 weeks. Custom model development: 6-12 weeks depending on complexity. Integration and deployment: 3-6 weeks. We move fast, but intelligence can\'t be rushed. Quality over speed, always.',
+    question: 'How long does AI development take?',
+    answer: "Depends on complexity. Simple automation: weeks. Custom ML models: months. We'll give you honest timelines after discovery. No BS, no surprises."
   },
   {
     id: '03',
-    question: 'Do you only work with specific technologies?',
-    answer: 'No. We\'re framework-agnostic. Python, TensorFlow, PyTorch, FastAPI, Next.js, PostgreSQL—we choose the right tools for your challenge, not what\'s trendy. Your problem defines the stack, not the other way around.',
+    question: 'What tech stack do you use?',
+    answer: "Whatever works. Python for AI, Next.js for frontend, FastAPI for backend, PostgreSQL with pgvector for data. We're not married to tools—we're married to results."
   },
   {
     id: '04',
-    question: 'Can you handle both strategy and implementation?',
-    answer: 'Absolutely. We don\'t just consult—we execute. From identifying AI opportunities to deploying production-ready systems, we own the entire journey. Strategy without implementation is just expensive advice.',
+    question: 'Can you handle the full stack?',
+    answer: "From data science to deployment, yes. We don't hand off between teams. One partner, end-to-end ownership."
   },
   {
     id: '05',
-    question: 'Do you offer ongoing support and optimization?',
-    answer: 'Yes. AI systems learn and evolve. We provide continuous monitoring, model retraining, performance optimization, and scaling support. Intelligence requires maintenance, and we\'re here for the long term.',
+    question: 'What happens after launch?',
+    answer: "We monitor, optimize, and scale. AI isn't set-and-forget—it's living technology that improves over time. We stick around to make it better."
   },
   {
     id: '06',
-    question: "What's your process like?",
-    answer: 'Discovery → Design → Develop → Deploy → Optimize. We start by understanding your business deeply, architect intelligent solutions, build custom models, integrate seamlessly, and continuously refine. Transparent. Collaborative. Results-driven.',
+    question: 'How do you work with clients?',
+    answer: "Total transparency. Weekly updates, shared roadmaps, direct access to our team. You're not just a client—you're a partner in building intelligence."
   },
 ];
 
@@ -92,13 +92,13 @@ export default function FaqSection() {
                 >
                   {/* Number (01, 02...) */}
                   <span className="text-sm font-mono text-white/90 pt-1 w-12 shrink-0">
-                    {item.id}
+                    <span className="font-chakra font-bold text-white">{item.id}</span>
                   </span>
                   
                   {/* Question */}
                   <div className="flex-1 pr-8">
                     <h3 className="text-xl md:text-2xl font-normal group-hover:text-white/80 transition-colors">
-                      {item.question}
+                      <span className="font-chakra">{item.question}</span>
                     </h3>
                     
                     {/* Answer (Animated reveal) */}
@@ -109,7 +109,7 @@ export default function FaqSection() {
                     >
                       <div className="overflow-hidden">
                         <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                          {item.answer}
+                          <span className="font-chakra">{item.answer}</span>
                         </p>
                       </div>
                     </div>
