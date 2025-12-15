@@ -77,7 +77,13 @@ const ProjectCard = ({
   index: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
+
+  const cardOptions = React.useMemo(() => ({
+        margin: "-20% 0px -10% 0px"
+  }), []);
+
+  const isInView = useInView(ref, cardOptions);
 
   useEffect(() => {
     if (isInView) {
@@ -87,6 +93,7 @@ const ProjectCard = ({
 
   return (
     <div 
+      // Attach ref to the CONTAINER to catch the whole block early
       ref={ref}
       className="min-h-screen flex flex-col justify-center pt-24 p-8 md:16 border-l border-neutral-800/50"
     >
@@ -221,22 +228,6 @@ export default function ProjectsPage() {
           <ProjectVisual activeProject={activeProject} />
         </div>
       </div>
-
-      {/* Footer / Contact CTA */}
-      <section className="h-[50vh] flex items-center justify-center bg-neutral-950 border-t border-neutral-800 relative overflow-hidden">
-        <div className="text-center px-4 z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start a project?</h2>
-          <button className="px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-neutral-200 transition-colors flex items-center gap-2 mx-auto">
-            Let's Talk <ArrowRight size={20} />
-          </button>
-        </div>
-        
-        {/* Footer Background Decoration */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -bottom-1/2 -left-1/4 w-full h-full bg-blue-500/10 blur-[120px] rounded-full" />
-          <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-purple-500/10 blur-[120px] rounded-full" />
-        </div>
-      </section>
     </div>
   );
 }
