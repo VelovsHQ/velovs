@@ -5,7 +5,9 @@ import { Navbar, NavBody, NavItems, NavbarLogo } from "../components/ui/resizabl
 import Hero from "../components/ui/hero";
 
 import Features from "../components/Features";
+
 import StatsSection from "../components/StatsSection";
+import StickyProjects from "../components/StickyProjects";
 
 export default function Page() {
   return (
@@ -27,6 +29,7 @@ export default function Page() {
       <Hero />
       <Features />
       <StatsSection />
+      <StickyProjects />
     </>
   );
 }
