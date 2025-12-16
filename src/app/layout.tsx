@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import { Geist, Geist_Mono, Chakra_Petch } from "next/font/google";
 import "./globals.css";
+import StickyNav from '../components/StickyNav';
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${chakraPetch.variable} antialiased`}
 			>
 				<SmoothScroller />
+				<StickyNav />
 				{children}
 			</body>
 		</html>
