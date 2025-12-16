@@ -13,6 +13,8 @@ import Services from "../components/Services";
 import FAQ from "../components/FAQ";
 import CommunityMarquee from "../components/CommunityMarquee";
 import Brands from "../components/Brands";
+import Footer from "../components/ui/footer";
+import Contact from "../components/ui/contact";
 
 export default function Page() {
   return (
@@ -39,7 +41,9 @@ export default function Page() {
       <Services />
       <FAQ />
       <CommunityMarquee />
-      <Brands />
+      {/* <Brands /> */}
+      <Contact />
+      <Footer />
     </>
   );
 }
