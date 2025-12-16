@@ -87,7 +87,7 @@ export default function CommunityMarquee() {
       </div>
 
       {/* Marquee Section */}
-      <div className="relative w-full border-t border-gray-800/50 pt-16 group">
+      <div className="relative w-full pt-16 group">
         
         {/* The Scrolling Track */}
         {/* We duplicate the list to create the infinite loop effect */}
