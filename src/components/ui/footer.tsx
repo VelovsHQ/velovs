@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="text-xs text-[#FF3B1D] font-bold">//</span>
             </div>
             
-            <h3 className="text-2xl font-light leading-snug mb-8 text-white/90">
+            <h3 className="text-2xl font-light leading-snug mb-8 text-white/90 ">
               Join us for updates on innovative design and brand growth.
             </h3>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
             <span className="text-xs text-[#FF3B1D] font-bold">//</span>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 font-inter">
               <a href="#" className="text-3xl md:text-4xl font-light hover:text-zinc-400 transition-colors w-fit mb-1">Home</a>
               <a href="#" className="text-3xl md:text-4xl font-light hover:text-zinc-400 transition-colors w-fit mb-1">About</a>
               
@@ -85,7 +85,7 @@ export default function Footer() {
            {/* Spacer to align with the list in Col 2 */}
            <div className="h-[20px] lg:h-[84px] mb-0"></div> 
 
-           <div className="flex flex-col gap-1">
+           <div className="flex flex-col gap-1 font-inter">
               {['Services', 'Process', 'Pricing', 'Testimonials', 'FAQ', '404'].map((item) => (
                 <a key={item} href="#" className="text-3xl md:text-4xl font-light hover:text-zinc-400 transition-colors w-fit mb-1">
                   {item}
@@ -115,7 +115,7 @@ export default function Footer() {
             <span className="text-xs text-[#FF3B1D] font-bold">//</span>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 font-inter">
              {['LinkedIn', 'Instagram', 'YouTube', 'Twitter', 'Email'].map((item) => (
                <a key={item} href="#" className="flex items-center gap-2 text-xl font-light hover:text-zinc-400 transition-colors group">
                  {item} 
@@ -144,7 +144,7 @@ export default function Footer() {
         {/* Bottom Col 2: Company Info (35% Width) */}
         <div className="w-full lg:w-[35%] p-8 lg:px-12 py-8 border-b lg:border-b-0 lg:border-r border-white/10 flex items-end">
           <p className="max-w-md leading-relaxed">
-            Velovs® is a company registered in the United Kingdom. All services are delivered directly by Velovs, with no third-party involvement.
+            Velovs® is a company registered in the Sri Lanka. All services are delivered directly by Velovs, with no third-party involvement.
           </p>
         </div>
 
