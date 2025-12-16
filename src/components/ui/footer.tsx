@@ -122,7 +122,7 @@ export default function Footer() {
             <span className="text-zinc-700">•</span>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
-          <p className="text-zinc-600">© 2025 Velovs & Co®. All rights reserved.</p>
+          <p className="text-zinc-600">© 2025 Velovs & Co®  All rights reserved.</p>
         </div>
 
         {/* Bottom Col 2: Company Info (35% Width) */}
