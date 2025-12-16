@@ -46,16 +46,17 @@ const PhoneShowcase = () => {
       </div>
 
       {/* --- LAYER 2: The Phone (Static Center) --- */}
-      <div className="relative z-10 w-[280px] md:w-[350px] mb-12">
-        {/* Using a drop shadow to separate phone from background */}
-        <div className="relative drop-shadow-2xl">
+      <div className="relative z-10 w-[800px] md:w-[1100px] mb-12">
+        {/* Crop the bottom (hand) section of the phone image */}
+        <div className="relative drop-shadow-2xl overflow-hidden" style={{ height: '650px' }}>
            <Image
             src="/images/brands/phone.png"
             alt="App Interface"
-            width={400}
-            height={800}
+            width={1400}
+            height={2800}
             priority
-            className="w-full h-auto"
+            className="w-full h-auto -scale-x-100"
+            style={{ objectFit: 'cover', objectPosition: 'top' }}
           />
         </div>
       </div>
