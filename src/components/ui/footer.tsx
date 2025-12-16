@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -28,9 +30,23 @@ export default function Footer() {
                 placeholder="Your Email *" 
                 className="w-full bg-transparent border-b border-white/20 py-4 text-lg text-white placeholder:text-zinc-500 focus:outline-none focus:border-white transition-colors"
               />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#FF3B1D] p-2 rounded-full text-white">
-                <ArrowUpRight size={18} />
-              </div>
+              <motion.button
+                whileHover={{
+                  scale: 1.08,
+                  boxShadow: "0 0 20px rgba(255, 59, 29, 0.6)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#FF3B1D] p-2 rounded-full text-white flex items-center justify-center"
+              >
+                <motion.span
+                  whileHover={{ rotate: 45 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center justify-center"
+                >
+                  <ArrowUpRight size={18} />
+                </motion.span>
+              </motion.button>
             </div>
             <p className="text-[11px] text-zinc-600 leading-relaxed">
               By submitting, you agree to our <span className="text-white">Terms</span> and <span className="text-white">Privacy Policy</span>.
