@@ -4,6 +4,7 @@ import { image } from "framer-motion/client";
 import Image from "next/image";
 import React from "react";
 
+
 // Mock data for the background images (Use your own URLs)
 const BG_IMAGES = [
   "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop",
@@ -19,12 +20,13 @@ const BRANDS = [
   "Logoipsum", "Logoipsum", "Logoipsum", "Logoipsum", "Logoipsum", "Logoipsum"
 ];
 
+
 const PhoneShowcase = () => {
   return (
     <section className="relative w-full bg-black py-20 overflow-hidden flex flex-col items-center justify-center min-h-[600px]">
       
       {/* --- LAYER 1: Background Moving Images (Moves Right) --- */}
-      <div className="absolute top-1/2 -translate-y-1/2 w-full z-0">
+      <div className="absolute top-[60%] -translate-y-1/2 w-full z-0">
         <div className="flex w-max animate-scroll-right hover:[animation-play-state:paused]">
           {/* We render the set twice to create the seamless infinite loop */}
           {[...BG_IMAGES, ...BG_IMAGES].map((src, index) => (
@@ -46,9 +48,9 @@ const PhoneShowcase = () => {
       </div>
 
       {/* --- LAYER 2: The Phone (Static Center) --- */}
-      <div className="relative z-10 w-[800px] md:w-[1100px] mb-12">
-        {/* Crop the bottom (hand) section of the phone image */}
-        <div className="relative drop-shadow-2xl overflow-hidden" style={{ height: '650px' }}>
+      <div className="absolute top-[91%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        {/* Crop the bottom (hand) section of the phone image and move it lower */}
+        <div className="relative drop-shadow-2xl overflow-hidden" style={{ height: '1400px', width: '1050px' }}>
            <Image
             src="/images/brands/phone.png"
             alt="App Interface"
@@ -58,11 +60,14 @@ const PhoneShowcase = () => {
             className="w-full h-auto -scale-x-100"
             style={{ objectFit: 'cover', objectPosition: 'top' }}
           />
+          {/* Black solid overlay on bottom part to hide hand/arm */}
+          <div className="absolute bottom-0 left-0 right-0 h-[740px] bg-black pointer-events-none" />
+          <div className="absolute bottom-[740px] left-0 right-0 h-[180px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
         </div>
       </div>
 
       {/* --- LAYER 3: Brand Logos (Moves Left) --- */}
-      <div className="relative z-20 w-full mt-auto">
+      <div className="absolute bottom-[20px] w-full z-20">
         <div className="flex w-max animate-scroll-left">
           {/* We render the set twice to create the seamless infinite loop */}
           {[...BRANDS, ...BRANDS].map((brand, index) => (
