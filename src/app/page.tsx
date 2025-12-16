@@ -12,6 +12,7 @@ import Featured_works from "../components/Featured_works";
 import Services from "../components/Services";
 import FAQ from "../components/FAQ";
 import CommunityMarquee from "../components/CommunityMarquee";
+import Brands from "../components/Brands";
 
 export default function Page() {
   return (
@@ -38,6 +39,7 @@ export default function Page() {
       <Services />
       <FAQ />
       <CommunityMarquee />
+      <Brands />
     </>
   );
 }

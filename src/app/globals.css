@@ -120,26 +120,48 @@
 
 
 @theme {
-  /* 0.6s = Fast, aggressive blinking. 'step-end' = No fading, just snapping. */
-  --animate-cursor: cursor-blink 0.6s step-end infinite;
+	/* 0.6s = Fast, aggressive blinking. 'step-end' = No fading, just snapping. */
+	--animate-cursor: cursor-blink 0.6s step-end infinite;
 
-  @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+	@keyframes cursor-blink {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0; }
+	}
 
-  /* Define the custom animation */
-  --animate-marquee: marquee 25s linear infinite;
+	/* Define the custom animation */
+	--animate-marquee: marquee 25s linear infinite;
 
-  /* Define the keyframes */
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
+	/* Define the keyframes */
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	/* Added scroll-left and scroll-right animation utilities */
+	--animate-scroll-left: scroll-left 40s linear infinite;
+	--animate-scroll-right: scroll-right 40s linear infinite;
+
+	@keyframes scroll-left {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes scroll-right {
+		from {
+			transform: translateX(-50%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
 }
 
 
