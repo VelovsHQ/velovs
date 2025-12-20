@@ -26,7 +26,7 @@ export default function Page() {
             items={[
               { name: "Home", link: "#" },
               { name: "What we do", link: "#what-we-do" },
-              { name: "Services", link: "#services" },
+              { name: "Services", link: "/services" },
               { name: "Process", link: "#how-we-work" },
               { name: "Contact", link: "#contact" },
             ]}
