@@ -3,9 +3,9 @@
 import React from "react";
 import { Check, MessageCircle, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-import { Package } from "../app/lib/packages";
-import TiltCard from "./TiltCard";
-import { useCursor } from "./CursorContext";
+import { Package } from "../lib/packages";
+import TiltCard from "../components/TiltCard";
+import { useCursor } from "../components/ui/CursorContext";
 
 interface PackageCardProps {
   pkg: Package;

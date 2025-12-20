@@ -2,9 +2,9 @@
 import { StaticImageData } from "next/image";
 
 // 1. Import your local images from the components folder
-import man1 from "../../components/Images/man1.jpg";
-import man2 from "../../components/Images/man2.jpg";
-import man3 from "../../components/Images/man3.jpg";
+import man1 from "../../public/images/people/man1.jpg";
+import man2 from "../../public/images/people/man2.jpg";
+import man3 from "../../public/images/people/man3.jpg";
 
 export type Testimonial = {
   id: string;
