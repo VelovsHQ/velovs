@@ -3,6 +3,10 @@ import { Geist, Geist_Mono, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import StickyNav from '../components/StickyNav';
 
+// --- 1. NEW IMPORTS FOR CURSOR ---
+import { CursorProvider } from "../components/ui/CursorContext";
+import MagneticCursor from "../components/ui/MagneticCursor";
+
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -32,9 +36,11 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${chakraPetch.variable} antialiased`}
 			>
-				<SmoothScroller />
-				<StickyNav />
-				{children}
+				<CursorProvider>
+					<SmoothScroller />
+					<StickyNav />
+					{children}
+				</CursorProvider>
 			</body>
 		</html>
 	);
