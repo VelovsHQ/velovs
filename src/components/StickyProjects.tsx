@@ -144,7 +144,7 @@ const ProjectCard = ({
 };
 
 // Custom hook helper for simpler InView detection
-function useInView(ref: React.RefObject<Element>, options = {}) {
+function useInView(ref: React.RefObject<HTMLElement | null>, options = {}) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
