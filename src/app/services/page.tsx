@@ -19,8 +19,8 @@ import GravityWeb from "../../components/ui/GravityWeb";
 import { useCursor } from "../../components/ui/CursorContext";
 import PackageCard from "../../components/PackageCard";
 import TestimonialCard from "../../components/TestimonialCard";
-import { SERVICE_PACKAGES } from "../lib/packages";
-import { TESTIMONIALS } from "../lib/testimonials";
+import { SERVICE_PACKAGES } from "../../lib/packages";
+import { TESTIMONIALS } from "../../lib/testimonials";
 
 const services = [
   {
